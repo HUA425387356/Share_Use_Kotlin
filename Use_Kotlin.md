@@ -97,11 +97,8 @@ OK，那么我们来用Kotlin。
 * 构造函数怎么有那么多种
 * 单例模式怎么写
 * 匿名内部类怎么写
-* 静态变量怎么声明
-* List<>怎么声明
 * equals和==、===的区别
-* 空安全：问好(?)与两个叹号(!!)
-* val与var的区别
+* Java代码是转到Kotlin的实现原理
 --------
 ### Some Tips
 我主要是用下面两个方法解决的：
@@ -110,7 +107,7 @@ OK，那么我们来用Kotlin。
 * 复制Java代码到Kotlin文件中，让IDE帮忙转化，然后再一行行看，一行行改
 --------
 ### Some Notes
-* Kotlin constructor
+* Kotlin Constructor
 ```Kotlin
 //primary constructor可以写在类名后面
 class Person constructor(firstName: String) { ... }
@@ -168,6 +165,54 @@ class Constructors {
         println("Constructor")
     }
 }
-
+//未完
 ```
+* Kotlin Singleton与“匿名内部类”
+```Kotlin
+//单例需要使用object关键字，object的初始化是线程安全的
+object DataProviderManager {
+    fun registerDataProvider(provider: DataProvider) {
+        // ...
+    }
+}
+
+//匿名内部类
+fun countClicks(window: JComponent) {
+	//kotlin不需要像Java一样定义final常量
+	var clickCount = 0
+	var enterCount = 0
+
+	window.addMouseListener(object : MouseAdapter() {
+		override fun mouseClicked(e: MouseEvent) {                         
+			clickCount++
+		}
+
+		verride fun mouseEntered(e: MouseEvent) {
+			enterCount++
+		}
+	})           
+}
+
+//关于object关键字的中文博客
+https://blog.csdn.net/qq_32115439/article/details/73717858
+```
+* equals和==、===的区别
+```Kotlin
+equals
+1.equals方法不能作用于基本数据类型的变量
+2.如果没有对equals方法进行重写，则比较的是引用类型的变量所指向的对象的地址；
+3.诸如String、Date等类对equals方法进行了重写的话，比较的是所指向的对象的内容。
+
+==
+1.如果作用于基本数据类型的变量，则直接比较其存储的 “值”是否相等
+2.如果作用于引用类型的变量，则比较的是所指向的对象的地址
+
+===
+1.对于基本数据类型，如果类型不同，其结果就是不等。如果同类型相比，与“==”一致，直接比较其存储的 “值”是否相等；
+2.对于引用类型，与“==”一致，比较的是所指向的对象的地址
+```
+* Java代码是转到Kotlin的实现原理   
+> 这块还在研究，以后可以讲讲。
 -------- 
+### Last Word
+我这篇主要是介绍自己的学习Kotlin的经验，干货没多少。主要是想和大家说，新东西别光看，可以试着用到项目上。
