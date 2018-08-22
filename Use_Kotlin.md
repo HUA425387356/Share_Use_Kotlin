@@ -2,11 +2,11 @@
 ### Google And Kotlin
 Google力推的开发语言，从最新的Android Studio上就有很大体现了。
 - 在创建新项目的时候会看到默认勾选了 `Include Kotlin support`
-![创建新项目](https://.png)
-- 点击右键就能创建Kotlin文件
-![创建kt文件](https://.png)
+![创建新项目](https://github.com/HUA425387356/Share_Use_Kotlin/blob/master/image/uk_create_new_project.png)
+- 点击右键就能创建Kotlin文件    
+![创建kt文件](https://github.com/HUA425387356/Share_Use_Kotlin/blob/master/image/uk_create_new_kt_file.png)
 - copy Java代码进入Kotlin文件时，IDE会提示自动转为Kotlin语法
-![复制java代码到kt文件](https://.png)
+![复制java代码到kt文件](https://github.com/HUA425387356/Share_Use_Kotlin/blob/master/image/uk_copy_java_code.png)
 ```Java
 public class AppInfoResponse {
 
