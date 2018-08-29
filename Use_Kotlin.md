@@ -65,7 +65,7 @@ class AppInfoResponseKt {
 ### How to Use Kotlin
 相信很多同学都想试试Kotlin，但是`不知从何下手`或者`怕用了出问题赶不上项目进度`等。   
 其实不用怕，用就是了。   
-要认识要一点，我们的项目中`Kotlin和Java的混合`将会是常态，而混合的兼容IDE已经帮我们做好了，所以`边用边学`也是常态。   
+要认识要一点，我们的项目中`Kotlin和Java的混合`将会是常态，而混合的兼容IDE已经帮我们做好了。并且`边用边学`也是常态。   
 OK，那么我们来用Kotlin。
 
 -------
@@ -155,7 +155,7 @@ class Person(val name: String) {
 }
 
 //primary constructor和initializer blocks都会比secondary constructor先执行
-//primary constructor比initializer blocks先执行【待验证】
+//primary constructor比initializer blocks先执行【待验证，涉及到 byteCode字节码相关知识，还不会，得研究】
 class Constructors {
     init {
         println("Init block")
@@ -165,7 +165,7 @@ class Constructors {
         println("Constructor")
     }
 }
-//未完
+//未完【剩下的几种写法涉及到 byteCode字节码相关知识得研究透彻才能讲解】
 ```
 * Kotlin Singleton与“匿名内部类”
 ```Kotlin
@@ -187,14 +187,14 @@ fun countClicks(window: JComponent) {
 			clickCount++
 		}
 
-		verride fun mouseEntered(e: MouseEvent) {
+		override fun mouseEntered(e: MouseEvent) {
 			enterCount++
 		}
 	})           
 }
 
 //关于object关键字的中文博客
-https://blog.csdn.net/qq_32115439/article/details/73717858
+//https://blog.csdn.net/qq_32115439/article/details/73717858
 ```
 * equals和==、===的区别
 ```Kotlin
@@ -209,7 +209,9 @@ equals
 
 ===
 1.对于基本数据类型，如果类型不同，其结果就是不等。如果同类型相比，与“==”一致，直接比较其存储的 “值”是否相等；
-2.对于引用类型，与“==”一致，比较的是所指向的对象的地址
+2.对于引用类型，与“==”一致，比较的是所指向的对象的地址   
+//相关博客
+//https://blog.csdn.net/IO_Field/article/details/52817813
 ```
 * Java代码是转到Kotlin的实现原理   
 > 这块还在研究，以后可以讲讲。
