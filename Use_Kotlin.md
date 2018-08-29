@@ -214,7 +214,7 @@ equals
 //https://blog.csdn.net/IO_Field/article/details/52817813
 ```
 * Java代码是转到Kotlin的实现原理   
-> 这块还在研究，以后可以讲讲。
+> 我们都知道Java和Kotlin都是JVM语言。他们都是通过将代码转为字节码（byteCode），然后用在JVM上运行字节码，达到跨平台的目的。Java能通过IDE转为Kotlin代码正是因为字节码。这块还在研究，以后可以讲讲。
 -------- 
 ### Last Word
 我这篇主要是介绍自己的学习Kotlin的经验，干货没多少。主要是想和大家说，新东西别光看，可以试着用到项目上。
