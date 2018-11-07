@@ -1,4 +1,4 @@
-# Binder机制之AIDL
+# Aidl_in_Binder
 ### 基本概念
 
 - IPC ：`Inter-Process Communication`
@@ -465,7 +465,7 @@ int res = iMyAidlInterface.add(1, 2);
 ```    
 最后总结下整个过程:
 ![](https://img-blog.csdn.net/20160820000454677?)   
-![](https://img-blog.csdn.net/20180305214750337?) 
+
 
 
 
