@@ -311,7 +311,7 @@ public interface IMyAidlInterface extends android.os.IInterface {
 首先本身继承Iinterface，所以他也是个接口，接口中必须有方法，`代码定位到结尾`有2个方法。
 ```Java
 public void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat, double aDouble, java.lang.String aString) throws android.os.RemoteException;
-    public int add(int num1, int num2) throws android.os.RemoteException;
+public int add(int num1, int num2) throws android.os.RemoteException;
 ```   
 这两个方法就是basicTypes和add，就是我们服务端的2个方法。
 接着发现该接口中有1个内部类Stub，继承自本身（IMyAidlInterface）接口，`代码定位到Stub`类。
@@ -365,7 +365,7 @@ public void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat, do
 在这个类里面我们会发现有2个标识：用来区分两个方法，到底你远程请求哪个方法的唯一标识，`代码定位到代理类的结尾`。
 ```Java
  static final int TRANSACTION_basicTypes = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
-        static final int TRANSACTION_add = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
+ static final int TRANSACTION_add = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
 ```   
 回过头来，还记得我们客户端做了什么吗？   
 答案：绑定一个服务，在回调方法获取一个接口（iMyAidlInterface），它是`直接静态使用IMyAidlInterface里面的静态类Stub的asInterface的方法`：（好了我们去跟踪到Stub类asInterface这个方法）
@@ -464,7 +464,8 @@ return super.onTransact(code, data, reply, flags);
 int res = iMyAidlInterface.add(1, 2);
 ```    
 最后总结下整个过程:
-![](https://img-blog.csdn.net/20160820000454677?) 
+![](https://img-blog.csdn.net/20160820000454677?)   
+![](https://img-blog.csdn.net/20180305214750337?) 
 
 
 
